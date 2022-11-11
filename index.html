@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
   <title>Document</title>
   <style>
     body{
@@ -26,12 +28,13 @@
         z-index: 1;
         top: 50%;
         right: 50%;
-        transform: translateX(50%);
-        color: rgba(24, 243, 123, 0.2);
+        transform: translate(50%,-50%);
+        color: rgb(251, 251, 251);
+        font-size: 40px;
     }
     .fa-clover{
         color: rgba(24, 243, 123, 0.9);
-
+        font-size: 40px;
     }
   </style>
 </head>
@@ -41,7 +44,7 @@
   <canvas id="heart">
 </canvas>
 <div class="nametiktok">
-    <h2>Su ciu <i class="fa-solid fa-clover"></i> </h2>
+    <h2 class="suopa">Su ciu <i class="fa-solid fa-clover"></i> </h2>
 </div>
 
   <script>
@@ -188,7 +191,11 @@
     var s = document.readyState;
     if (s === 'complete' || s === 'loaded' || s === 'interactive') init();
     else document.addEventListener('DOMContentLoaded', init, false);
+    gsap.fromTo(".fa-clover", {autoAlpha: 0}, {autoAlpha: 1, duration: 20});
+    gsap.fromTo(".suopa", {opacity: 0}, {opacity: 1, duration: 20});
+
   </script>
+  
 </body>
 
 </html>
